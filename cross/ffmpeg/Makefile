@@ -60,13 +60,13 @@ endif
 ifeq ($(findstring $(ARCH),$(x86_ARCHES)),$(ARCH))
 DEPENDS += native/nasm
 ENV += PATH=$(NASM_PATH):$$PATH
-CONFIGURE_ARGS += --arch=i386 --enable-thumb
+CONFIGURE_ARGS += --arch=i386
 endif
 
 ifeq ($(findstring $(ARCH),$(x64_ARCHES)),$(ARCH))
 DEPENDS += native/nasm cross/libva cross/libva-utils cross/intel-vaapi-driver
 ENV += PATH=$(NASM_PATH):$$PATH
-CONFIGURE_ARGS += --arch=x86_64 --enable-thumb --enable-vaapi
+CONFIGURE_ARGS += --arch=x86_64 --enable-vaapi
 endif
 
 ifeq ($(findstring $(ARCH),$(PPC_ARCHES)),$(ARCH))
